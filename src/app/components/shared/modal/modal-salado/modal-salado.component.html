@@ -38,8 +38,8 @@
             <h4 class="precio">{{ salado?.price | currency:'CLP' }}</h4>
           </div>
           <div class="col-6 flex-end">
-            <button (click)="toPedidos()" type="button" class="btn btn-success">
-              Haz tu pedido
+            <button (click)="toPedidos()" (click)="addToCart(salado)" type="button" class="btn btn-success">
+              Agregar al carrito
             </button>
           </div>
         </div>

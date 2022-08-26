@@ -1,0 +1,111 @@
+<div *ngIf="!correctamente" class="card h-100" style="outline: solid 1px; padding:10px;">
+    <div class="card-body" style="padding-top: 0px;">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-3 d-flex justify-content-between"
+            style="align-items: baseline;">
+            <h3 class="mb-3 text-dark" style="display: contents;">Editar Cuenta</h3>
+            <button matTooltip="Editar" matTooltipPosition="above" matTooltipClass="tooltip-yw"
+                (click)="isDisabled()" class="btn btn-warning"> <i
+                    class="fa-solid fa-pen-to-square"></i></button>
+        </div>
+        <form [formGroup]="formRegistro" (ngSubmit)="actualizar(f)" #f="ngForm" class="row gutters">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="form-group">
+                    <label for="floatingInput">Ingrese su nuevo nombre y apellido </label>
+                    <input formControlName="name" type="text" class="form-control" id="name" name="name"
+                        placeholder="Juan Pérez" [ngClass]="{'is-invalid':nameError()}">
+                    <div *ngIf="this.formRegistro.get('name')">
+                        <p class="text-danger aviso" *ngIf="nameError()">Debe ingresar su nombre y apellido</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+
+                <div class="form-group">
+                    <label for="floatingPassword">Contraseña</label>
+                    <input formControlName="password" type="password" class="form-control" id="password"
+                        name="password" placeholder="********"
+                        [ngClass]="{'is-invalid':passwordError(), 'is-valid':validaPassword()&&!validaPasswordVacio()}">
+                    <div *ngIf="this.formRegistro.get('password')">
+                        <p class="text-danger aviso" *ngIf="passwordError()"> La contraseña debe tener al menos
+                            5 caracteres </p>
+                    </div>
+                </div>
+
+
+
+
+
+               
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                <fieldset disabled>
+                    <div class="form-group">
+                        <label for="floatingInput">Email</label>
+                        <input formControlName="email" type="text" class="form-control" id="email" name="email"
+                            placeholder="nombre@ejemplo.com"
+                            >
+                    </div>
+                </fieldset>
+            </div>
+            
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                   
+
+                <div class="form-group">
+                    <label for="floatingPassword">Repita la contraseña</label>
+                    <input formControlName="validandoPassword" type="password" class="form-control"
+                        id="validandoPassword" name="validandoPassword" placeholder="********"
+                        [ngClass]="{'vacio':validaPasswordVacio(),'is-valid':validaPassword()&&!validaPasswordVacio()&&!passwordError() ,'is-invalid':!validaPassword()&&!validaPasswordVacio() || passwordError()}">
+                    <div *ngIf="this.formRegistro.get('validandoPassword')">
+                        <p class="text-danger aviso" *ngIf="!validaPassword()&&!validaPasswordVacio()"> Las
+                            contraseñas no coinciden</p>
+                    </div>
+                </div>
+                
+
+
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                
+
+
+                <div class="form-group">
+                    <label for="floatingInput">Número de teléfono</label>
+                    <input formControlName="phone" type="number" class="form-control" id="phone" name="phone"
+                        placeholder="911122233" [ngClass]="{'is-invalid':phoneError()}">
+                    <div *ngIf="this.formRegistro.get('phone')">
+                        <p class="text-danger aviso" *ngIf="phoneError()">El formato es 988877755</p>
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 d-flex justify-content-between mt-3">
+                
+                <button
+                    [disabled]="!this.formRegistro.valid||!validaPassword()||validaPasswordVacio()"
+                    type="submit" name="submit" class="btn btn-success">Actualizar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div *ngIf="correctamente" style="text-align:center ;">
+    
+    <br>
+    
+        <img class="imgcreado" style="width:20%" src="../../assets/tick.png" alt="">
+        <br>
+        <br>
+        <h2 class="sweet-title-3" style="line-height: 0; margin-bottom: 2%;">¡Tus datos fueron modificados correctamente!</h2>
+        <br>
+        <br>
+
+
+
+
+</div>

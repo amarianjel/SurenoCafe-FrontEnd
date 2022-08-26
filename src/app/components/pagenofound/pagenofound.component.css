@@ -1,12 +1,13 @@
 /*******************
 Error Page
 ******************/
-
+*{
+    font-family: Karla;
+}
 .error-box {
-    height: 100%;
-    position: fixed;
+    height: 200px;
     background: url(../../../assets/error-bg.jpg) no-repeat center center #fff;
-    width: 100%;
+    width: 200px;
 }
 
 .error-box .footer {
@@ -24,4 +25,10 @@ Error Page
     font-weight: 900;
     text-shadow: 4px 4px 0 #ffffff, 6px 6px 0 #263238;
     line-height: 210px;
+}
+
+.btn-danger{
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
 }

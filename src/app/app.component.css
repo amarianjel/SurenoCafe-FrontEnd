@@ -7,3 +7,11 @@
     margin-right: auto;
     width: 25%;
   } */
+.slider {
+    background: #a41522;
+}
+@media (min-width: 768px ){
+    .slider {
+        min-width: 492px !important;
+    }
+}

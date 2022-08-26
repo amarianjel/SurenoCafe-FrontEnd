@@ -89,3 +89,7 @@
     background-color: #b23641 !important;
     border-color: rgb(0 0 0 / 80%) !important;
 }
+html, body { 
+    height: 100%;  
+    font-family: Karla;
+}

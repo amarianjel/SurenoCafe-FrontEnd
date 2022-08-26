@@ -1,24 +1,84 @@
-<div class="sidenav">
-    <div class="login-main-text">
-       <h2>Application<br> Login Page</h2>
-       <p>Login or register from here to access.</p>
-    </div>
- </div>
- <div class="main">
-    <div class="col-md-6 col-sm-12">
-       <div class="login-form">
-          <form>
-             <div class="form-group">
-                <label>User Name</label>
-                <input type="text" class="form-control" placeholder="User Name">
+<div class="d-flex justify-content-end">
+   <button (click)="toggleDrawer()" type="button" class="btn-close"
+   style="width: 30px; height: 30px; margin-left: 0px; opacity: 1;"></button>
+  </div>
+<section class="vh-100">
+   <div class="container-fluid h-custom">
+     <div class="row d-flex justify-content-center align-items-center h-100">
+       <div class="col-xs-4 col-md-9 col-lg-9 col-xl-9 ">
+         <form [formGroup]="formLogin" (ngSubmit)="login()" autocomplete="off" method="POST">
+            
+           <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+               <img src="../../../assets/sureno-logo-blanco.png" alt="" style="margin: auto;">
+               <!-- <p class="lead fw-normal mb-0 me-3">Iniciar Sesión</p> -->
+           </div>
+ 
+           <div class="divider d-flex align-items-center my-4">
+             <p class="text-center fw-bold mx-3 mb-0">Iniciar Sesión</p>
+           </div>
+ 
+           <!-- Email input -->
+           <div class="form-outline mb-4">
+            <label class="form-label" for="form3Example3">Correo Electrónico</label>
+             <input formControlName="email" id="exampleInputEmail1"
+             aria-describedby="emailHelp" type="email" class="form-control form-control-lg"
+               placeholder="Ingrese un correo valido" />
+             
+           </div>
+ 
+           <!-- Password input -->
+           <div class="form-outline mb-3">
+            <label class="form-label" for="form3Example4">Contraseña</label>
+             <input formControlName="password" id="exampleInputPassword1" type="password" class="form-control form-control-lg"
+               placeholder="Ingrese su contraseña" />
+             
+           </div>
+ 
+           <div class="d-flex justify-content-between align-items-center">
+             <!-- Checkbox -->
+             <div class="form-check mb-0">
+               <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+               <label class="form-check-label" for="form2Example3">
+               Recuérdame 
+               </label>
              </div>
-             <div class="form-group">
-                <label>Password</label>
-                <input type="password" class="form-control" placeholder="Password">
-             </div>
-             <button type="submit" class="btn btn-black">Login</button>
-             <button type="submit" class="btn btn-secondary">Register</button>
-          </form>
+             <a href="#!" class="text-body">¿Olvidó su contraseña?</a>
+           </div>
+ 
+           <div class="text-center mt-4 pt-2">
+             <button [disabled]="formLogin.invalid" type="submit" class="btn btn-dark btn-lg"
+               style="padding-left: 2.5rem; padding-right: 2.5rem;">Iniciar Sesión</button>
+             <p class="small fw-bold mt-2 pt-1 mb-0">¿Aún no tienes una cuenta? <a href="#!" [routerLink]="['auth/registro']" (click)="toggleDrawer()"
+                 class="link-danger">Regístrate</a></p>
+           </div>
+ 
+         </form>
        </div>
-    </div>
- </div>
+     </div>
+   </div>
+   
+ </section>
+<!-- <div class="col-md-6 col-sm-12" style="margin: auto;">
+   <img src="../../../assets/sureno-logo-blanco.png" alt="">
+        <h2>Café Sureño<br> Login </h2>
+        <p>Login para tener acceso a las modificaciones de la aplicación</p>
+   <div class="login-form">
+      <form class="omb_loginForm" [formGroup]="formLogin" (ngSubmit)="login()" autocomplete="off" method="POST">
+         <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email</label>
+            <input formControlName="email" type="text" class="form-control" id="exampleInputEmail1"
+               aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text" style="color: black;">Nunca compartiremos su correo electrónico con nadie.</div>
+         </div>
+         <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+            <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1">
+         </div>
+         <button type="submit" class="btn btn-lg btn-block btn-dark">Ingresar</button>
+      </form>
+      <br>
+      <a [routerLink]="['../registrarse']"> O Registrate</a>
+   </div>
+</div> -->
+
+<!-- [routerLink]="['/auth/admin']" -->

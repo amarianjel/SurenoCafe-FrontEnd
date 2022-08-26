@@ -1,0 +1,89 @@
+ <body class="text-center vsc-initialized ">
+    
+    <main class="form-signin w-100 m-auto main">
+      <div *ngIf="!correctamente">
+      <form [formGroup]="formRegistro" (ngSubmit)="registro(f)" #f="ngForm" >
+        <img class="icono-usuario" src="../../assets/icono-usuario.png" alt="">
+        <h1 class="h3 titulo">Registro</h1>
+    
+        <div class="form-floating" >
+            <input formControlName="name" type="text" class="form-control" id="name" name="name" placeholder="Juan Pérez" [ngClass]="{'is-invalid':nameError()}">
+            <label for="floatingInput">Nombre y apellido </label>
+            <div *ngIf="this.formRegistro.get('name')">
+                
+              <p class="text-danger aviso" *ngIf="nameError()" >Debe ingresar su nombre y apellido</p>
+            </div>
+          </div>
+
+
+
+
+        <div class="form-floating">
+          <input formControlName="phone"  type="number" class="form-control" id="phone" name="phone" placeholder="911122233" [ngClass]="{'is-invalid':phoneError()}">
+          <label for="floatingInput">Número de teléfono</label>
+          <div *ngIf="this.formRegistro.get('phone')">
+            <p class="text-danger aviso" *ngIf="phoneError()" >El formato es 988877755</p>
+            </div>
+      </div>
+
+      
+
+        <div class="form-floating">
+          <input formControlName="email"  type="text" class="form-control" id="email" name="email" placeholder="nombre@ejemplo.com" [ngClass]="{'is-invalid':emailError(),'is-valid':validaEmail()&&!validaEmailVacio() }">
+          <label for="floatingInput">Email</label>
+          <div *ngIf="this.formRegistro.get('email')">
+              <p class="text-danger aviso" *ngIf="emailError()" >nombre@ejemplo.com</p>
+            </div>
+        </div>
+
+        <div class="form-floating">
+          <input formControlName="validandoEmail"  type="text" class="form-control" id="validandoEmail" name="validandoEmail"  placeholder="nombre@ejemplo.com" [ngClass]="{'vacio':validaEmailVacio(),'is-valid':validaEmail()&&!validaEmailVacio()&&!emailError(),'is-invalid':!validaEmail()&&!validaEmailVacio() || emailError()}">
+          <label for="floatingInput">Repita el email</label>
+          <div *ngIf="this.formRegistro.get('validandoEmail')">
+            <p class="text-danger aviso" *ngIf="!validaEmail()&&!validaEmailVacio()">No coinciden los emails</p>
+            </div>
+        </div>
+
+
+          <div class="form-floating">
+            <input formControlName="password"  type="password" class="form-control" id="password" name="password" placeholder="********" [ngClass]="{'is-invalid':passwordError(), 'is-valid':validaPassword()&&!validaPasswordVacio()}">
+            <label for="floatingPassword">Contraseña</label>
+            <div *ngIf="this.formRegistro.get('password')">
+                <p class="text-danger aviso" *ngIf="passwordError()"> La contraseña debe tener al menos 5 caracteres </p>
+              </div>
+          </div>
+
+
+          <div class="form-floating">
+            <input formControlName="validandoPassword"  type="password" class="form-control" id="validandoPassword" name="validandoPassword" placeholder="********" [ngClass]="{'vacio':validaPasswordVacio(),'is-valid':validaPassword()&&!validaPasswordVacio()&&!passwordError() ,'is-invalid':!validaPassword()&&!validaPasswordVacio() || passwordError()}">
+            <label for="floatingPassword">Repita la contraseña</label>
+            <div *ngIf="this.formRegistro.get('validandoPassword')">
+                <p class="text-danger aviso" *ngIf="!validaPassword()&&!validaPasswordVacio()"> Las contraseñas no coinciden</p>
+              </div>
+          </div>
+
+
+
+         
+
+    
+        <button class="btn btn-outline-danger"  [disabled]="!this.formRegistro.valid||!validaEmail()||validaEmailVacio()||!validaPassword()||validaPasswordVacio()" type="submit">Registrarse</button>
+        <p class="text-danger aviso" *ngIf="yaexiste">El email ya existe</p>
+      </form>
+    </div>
+
+    <div *ngIf="correctamente" class="divcreado">
+      <br>
+      <img class="imgcreado" src="../../assets/tick.png" alt="">
+      <h2>Usuario creado correctamente</h2>
+      <h2 class="text-success">Para continuar debes Iniciar Sesión</h2>
+      <br>
+    </div>
+
+
+
+    </main>      
+        <img class="flor" src="../../assets/flor.png" alt="">
+      <img class="reversa" src="../../assets/flor.png" alt="">
+    
+    </body>

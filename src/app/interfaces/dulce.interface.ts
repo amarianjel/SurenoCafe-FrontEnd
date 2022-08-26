@@ -7,5 +7,6 @@ export interface IDulce {
     price: number;
     description: string;
     imageUrl: string;
+    stock: number;
     
 }

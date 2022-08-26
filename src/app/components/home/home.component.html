@@ -23,7 +23,7 @@
     </div>
 </div>
 
-<div class="row mt-4 background-3">
+<div class="row mt-4 background-3" *ngIf="dulcesMasVendidos && saladosMasVendidos">
     <div class="col-xl-3" style="display: flex; margin: auto; justify-content: center">
         <h2 class="title-font-3 mt-3">Productos destacados</h2>
     </div>
@@ -32,53 +32,35 @@
             <div class="carousel-indicators buttons-round" style="margin-bottom: -40px;">
               <button class="" type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
               <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
             <div class="carousel-inner" style="margin-bottom: 50px; margin-top: 50px;">
               <div class="carousel-item active" data-bs-interval="10000">
 
                 <div class="col-12 flexed">
                     <div class="card custom-margin bg-color" style="width: 18rem; " *ngFor="let _ of [].constructor(3); let i = index" >
-                        <div class="card-body">
+                        <div *ngIf="dulcesMasVendidos[i]" class="card-body">
                             <a class="centered-sweet pointer" routerLink="/dulce" >
-                                <img [src]="this.pasteleriaComponent.pasteleria[i].imageUrl" alt="" class="img-fluid">
-                                <h2 class="product-title custom-h2">{{this.pasteleriaComponent.pasteleria[i].name | uppercase}}</h2>
+                                <img [src]="dulcesMasVendidos[i].imageUrl" alt="" class="img-fluid">
+                                <h2 class="product-title custom-h2">{{dulcesMasVendidos[i].name| uppercase}}</h2>
                             </a>
                         </div>
                       </div>
                 </div>
               </div>
+
               <div class="carousel-item" data-bs-interval="2000">
                 <div class="col-12 flexed">
                     <div class="card custom-margin bg-color" style="width: 18rem;" *ngFor="let _ of [].constructor(3); let i = index" >
-                        <div class="card-body">
-                            <a class="centered-sweet pointer" routerLink="/dulce" >
-                                <img [src]="this.postreComponent.postre[i].imageUrl" alt="" class="img-fluid">
-                                <h2 class="product-title custom-h2">{{this.postreComponent.postre[i].name | uppercase}}</h2>
+                        <div *ngIf="saladosMasVendidos[i]" class="card-body">
+                            <a class="centered-sweet pointer" routerLink="/salado" >
+                                <img [src]="saladosMasVendidos[i].imageUrl" alt="" class="img-fluid">
+                                <h2 class="product-title custom-h2">{{saladosMasVendidos[i].name| uppercase}}</h2>
                             </a>
                         </div>
                       </div>
                 </div>
-
-                <!-- <div class="carousel-caption d-none d-md-block">
-                  <h5>Second slide label</h5>
-                  <p>Some representative placeholder content for the second slide.</p>
-                </div> -->
               </div>
-              <div class="carousel-item">
-
-                <div class="col-12 flexed">
-                    <div class="card custom-margin bg-color" style="width: 18rem;" *ngFor="let _ of [].constructor(3); let i = index" >
-                        <div class="card-body">
-                            <a class="centered-sweet pointer" routerLink="/dulce" >
-                                <img [src]="this.tortaComponent.torta[i].imageUrl" alt="" class="img-fluid">
-                                <h2 class="product-title custom-h2">{{this.tortaComponent.torta[i].name | uppercase}}</h2>
-                            </a>
-                        </div>
-                      </div>
-                </div>
-
-              </div>
+              
             </div>
             <button class="carousel-control-prev arrow-size" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>

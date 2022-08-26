@@ -3,6 +3,7 @@ import { ProductService } from '../../../../services/product.service';
 import { ISalado } from '../../../../interfaces/salado.interface';
 import { ModalService } from '../../../../services/modal.service';
 import { Router } from '@angular/router';
+import { ShoppingCartService } from 'src/app/services/shopping-cart.service';
 
 @Component({
   selector: 'app-modal-salado',
@@ -23,6 +24,7 @@ export class ModalSaladoComponent implements OnInit {
   constructor(
     public modalService: ModalService,
     public productService: ProductService,
+    public shoppingCartService: ShoppingCartService,
     private readonly router: Router
   ) {}
 
@@ -33,7 +35,7 @@ export class ModalSaladoComponent implements OnInit {
   //Función que navega hacia el pedido
   toPedidos() {
     this.modalService.ocultarModal();
-    this.router.navigate(['/pedidos']);
+    // this.router.navigate(['/pedidos']);
   }
 
   //Muestra los dulces del tipo seleccionado
@@ -63,6 +65,10 @@ export class ModalSaladoComponent implements OnInit {
 
   ocultarModal() {
     this.modalService.ocultarModal();
+  }
+
+  addToCart(producto: ISalado){
+    this.shoppingCartService.addSalado(producto);
   }
 
 }

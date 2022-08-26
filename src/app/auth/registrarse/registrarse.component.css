@@ -1,0 +1,144 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+}
+
+.form-floating{
+  margin-bottom: 20px;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+  
+}
+
+.error{
+  outline: rgba(241, 89, 89, 0.705) solid 4px;
+  border: rgba(241, 89, 89, 0.705) solid 1px;
+}
+
+.coincide{
+  outline: rgba(93, 230, 100, 0.705) solid 4px;
+  border:  rgba(93, 230, 100, 0.705) solid 1px;
+}
+
+.vacio{
+  border: black solid 1px;
+  display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    outline:white solid 4px;
+}
+.form-signin input[type="email"] {
+
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.titulo{
+    font-family: Karla;
+    font-weight: 700;
+   
+}
+
+.icono-usuario{
+    opacity: 60%;
+    width:72px;
+    height:72px;
+}
+
+/* .form-signin input[type="password"] {
+  
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+} */
+main{
+    z-index: 10;
+}
+
+.aviso{
+  font-size: small;
+  contain: size;
+}
+
+.flor{
+    z-index: 1;
+    opacity: 50%;
+    position: absolute;
+    left: 0;
+}
+
+.reversa{
+    z-index: 1;
+    opacity: 50%;
+    position: absolute;
+    transform: scaleX(-1);
+    right:0;
+  }
+
+@media (max-width: 992px) { 
+ .reversa{
+    opacity: 25%;
+    width:40%
+ }
+ .flor{
+    opacity: 25%;
+    width: 40%;
+ }
+}
+
+@media (max-width: 768px) { 
+    .reversa{
+       
+        opacity: 15%;
+     }
+     .flor{
+       opacity: 15%;
+     
+     }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.divcreado{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.imgcreado{
+  width: 30%;
+}
+.form-floating>.form-control-plaintext~label, .form-floating>.form-control:focus~label, .form-floating>.form-control:not(:placeholder-shown)~label, .form-floating>.form-select~label{
+  display: flex;
+}

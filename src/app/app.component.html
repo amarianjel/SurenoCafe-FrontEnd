@@ -1,5 +1,12 @@
-<app-navbar></app-navbar>
+
+<mat-drawer-container class="example-container">
+    <mat-drawer class="slider" #drawer mode="over"><app-login></app-login></mat-drawer>
+    
+    <mat-drawer-content style="background: white;">
+        <app-navbar></app-navbar>
 <div class="container">
     <router-outlet (activate)="onActive()"></router-outlet>
 </div>
 <app-footer></app-footer>
+    </mat-drawer-content>
+</mat-drawer-container>

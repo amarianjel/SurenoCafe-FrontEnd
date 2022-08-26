@@ -1,0 +1,33 @@
+<div class="row mt-4 sw-background-1">
+    <div class="col-xl-12 align-bottom">
+        <h2 class="sweet-title-1" style="line-height: 0;">SABORES</h2>
+        <h2 class="sweet-title-2"> DULCES </h2>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row mt-2 mb-3 justify-ct">
+        <!--Dulces-->
+        <div class="col-xl-12 mt-3">
+            <h6 class="mb-0" style="font-family: Karla;"><a class="text-body" style="color: #b23641 !important; cursor: pointer;" (click)="backClicked()"><i
+                class="fas fa-long-arrow-alt-left me-2"></i>Volver</a>
+            </h6>
+        </div>
+        <div class="col-xl-12 centered-sweet mt-3 mb-3">
+            <h2 class="sweet-title-3">{{tipo}}</h2>
+        </div>
+
+        <div *ngFor="let dulce of tipoDulce; index as i" class="col-xl-4 centered-sweet mb-5 ">
+            <div  class="col-xl-4 centered-sweet mt-5 cursor-pointer">
+                <!---- Modal existente pasa el arreglo designado y la posicion en la que se selecciona-->
+                <a class="centered-sweet pointer" (click)="abrirModal(tipoDulce,i)">
+                    <img [src]="dulce.imageUrl | imageDefault: defaultImg" alt="" class="product-img mb-2 img-fluid">
+                    <h2 class="product-title custom-h2">{{dulce.name | uppercase}}</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<app-modal-dulce></app-modal-dulce>

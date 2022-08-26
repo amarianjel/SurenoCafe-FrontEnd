@@ -9,17 +9,21 @@ import { DulceComponent } from './dulce/dulce.component';
 import { SaladoComponent } from './salado/salado.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { LocalizacionComponent } from './localizacion/localizacion.component';
-import { CarnesComponent } from './salado/carnes/carnes.component';
-import { AcompanhamientosComponent } from './salado/acompanhamientos/acompanhamientos.component';
-import { GuisosComponent } from './salado/guisos/guisos.component';
-import { LasanhasComponent } from './salado/lasanhas/lasanhas.component';
-import { PollosRellenosComponent } from './salado/pollos-rellenos/pollos-rellenos.component';
-import { QuinchesComponent } from './salado/quinches/quinches.component';
+
 import { HomeComponent } from './home/home.component';
 import { PagenofoundComponent } from './pagenofound/pagenofound.component';
+
 import { PasteleriaComponent } from './dulce/pasteleria/pasteleria.component';
 import { PostreComponent } from './dulce/postre/postre.component';
 import { TortaComponent } from './dulce/torta/torta.component';
+
+import { ProductoSaladoComponent } from './salado/producto-salado/producto-salado.component';
+import { ProductoDulceComponent } from './dulce/producto-dulce/producto-dulce.component';
+import { AgendaComponent } from './agenda/agenda.component';
+import { MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
 
 
 
@@ -28,29 +32,21 @@ import { TortaComponent } from './dulce/torta/torta.component';
     HomeComponent,
     DulceComponent,
     SaladoComponent,
-    CarnesComponent,
-    AcompanhamientosComponent,
-    GuisosComponent,
-    LasanhasComponent,
-    PollosRellenosComponent,
-    QuinchesComponent,
     PedidosComponent,
     LocalizacionComponent,
     PagenofoundComponent,
+
     PasteleriaComponent,
     PostreComponent,
     TortaComponent,
+    ProductoSaladoComponent,
+    ProductoDulceComponent,
+    AgendaComponent,
   ],
   exports: [
     HomeComponent,
     DulceComponent,
-    SaladoComponent,
-    CarnesComponent,
-    AcompanhamientosComponent,
-    GuisosComponent,
-    LasanhasComponent,
-    PollosRellenosComponent,
-    QuinchesComponent,  
+    SaladoComponent,  
     PedidosComponent,
     LocalizacionComponent,
     PagenofoundComponent,
@@ -64,7 +60,14 @@ import { TortaComponent } from './dulce/torta/torta.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatSelectModule,
+  ],
+  providers:[
+    { provide: MAT_DATE_LOCALE, useValue: 'en-GB' }
   ]
 })
 export class PaginasModule { }

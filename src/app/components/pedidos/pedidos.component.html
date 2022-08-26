@@ -1,26 +1,142 @@
-<div class="row mt-4 pd-background-1">
-    <div class="col-xl-12 dp-flex mt-4 mb-4">
-        <h2 style="margin-right: 30px; align-items: center; display: flex;" >$0</h2>
-        <i class="fa-solid fa-cart-shopping fa-4x" style="margin-right: 30px;"></i>
-        <i class="fa-solid fa-right-to-bracket fa-4x" style="margin-right: 20px;"></i>
-    </div>
-</div>
-<div class="row pd-background-2">
-    <div class="col-xl-12 mt-4 mb-4 dp-flex-around">
-        <h2 class="ord-title-1">Pasteleria</h2>
-        <h2 class="ord-title-1">Postres</h2>
-        <h2 class="ord-title-1">Tortas</h2>
-        <h2 class="ord-title-1">Empanadas</h2>
-        <h2 class="ord-title-1">Carnes</h2>
-        <h2 class="ord-title-1">Lasañas</h2>
-        <h2 class="ord-title-1">Otros</h2>
-    </div>
-</div>
-<div class="row mt-4">
-    <div class="col-xl-12 centered-sweet mt-3 mb-3">
-        <h2 class="ord-title-3">Pastelería</h2>
-    </div>
-    <div class="col-xl-4">
 
+<div class="row mt-4 sw-background-1">
+    <div class="col-xl-12 align-bottom">
+        <h2 class="sweet-title-1" style="line-height: 0;">CARRITO DE</h2>
+        <h2 class="sweet-title-2">COMPRAS</h2>
     </div>
+</div>
+<div *ngIf="carritoSalado.length<=0 && carritoDulce.length<=0" class="row mt-4 mb-4" style="justify-content: center;" >
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <img src="/assets/carrito-vacio.png"
+        style="max-width: 60%;" alt="">
+        <h1 style="color:black">Tu Carrito está vacío :(</h1>
+        <h3 style="color:black">Prueba agregar algo!</h3>
+        <button class="btn btn-danger mt-2 mb-2" routerLink="/home">Ver Productos</button>
+    </div>
+</div>
+
+<div class="row mt-4" *ngIf="carritoSalado.length>0 || carritoDulce.length>0 ">
+    <section class="h-100" style="background-color: #d2c9ff;">
+        <div class="container py-5 ">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12">
+                    <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+                        <div class="card-body p-0">
+                            <div class="row g-0">
+                                <div class="col-lg-8">
+                                    <div class="p-5">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <h1 class="fw-bold mb-0 text-black">Listado de Pedidos</h1>
+                                            <!-- <h6 class="mb-0 text-muted"> {{carritoSalado.length}} Salado(s)</h6>
+                                            <h6 class="mb-0 text-muted"> {{carritoDulce.length}} Dulce(s)</h6> -->
+                                        </div>
+                                        <div class="d-flex flex-column align-items-end">
+                                            <h6 class="mb-0 text-muted"> {{carritoSalado.length}} Salado(s)</h6>
+                                            <h6 class="mb-0 text-muted"> {{carritoDulce.length}} Dulce(s)</h6>
+                                        </div>
+                                        <hr class="my-4">
+                                        <!-- Salados -->
+                                        <div class="row mb-4 d-flex justify-content-between align-items-center"
+                                            *ngFor="let productoSalados of carritoSalado">
+                                            <div class="col-md-2 col-lg-2 col-xl-2">
+                                                <img [src]="productoSalados.imageUrl"
+                                                    class="img-fluid rounded-3" alt="Cotton T-shirt">
+                                            </div>
+                                            <div class="col-md-3 col-lg-3 col-xl-3">
+                                                <h6 class="text-muted">{{productoSalados.tipo}}</h6>
+                                                <h6 class="text-black ">{{productoSalados.name}}</h6>
+                                            </div>
+                                            <div class="col-md-3 col-lg-3 col-xl-2 d-flex mb-3">
+                                                <button class="btn btn-link px-2"
+                                                (click)="removeOneSalado(productoSalados)">
+                                                    <i class="fas fa-minus"></i>
+                                                </button>
+
+                                                <input id="form1" min="1" name="quantitySalado" [value]="productoSalados.quantity" type="number"
+                                                    style="min-width: calc(1.5em + .5rem + 2px); "
+                                                    class="form-control form-control-sm" />
+
+                                                <button class="btn btn-link px-2"
+                                                    (click)="addOneSalado(productoSalados)">
+                                                    <i class="fas fa-plus"></i>
+                                                </button>
+                                            </div>
+                                            <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                                                <h6 class=""> {{(productoSalados.price)*(productoSalados.quantity!) | currency:'CLP'+''}}
+                                                    
+                                                </h6>
+                                            </div>
+                                            <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                                                <a (click)="removeSalado(productoSalados)" class="text-muted"><i class="fas fa-times" style="cursor:pointer;"></i></a>
+                                            </div>
+                                            <hr class="my-4">
+                                        </div>
+                                        <!-- Dulces -->
+                                        <div class="row mb-4 d-flex justify-content-between align-items-center"
+                                            *ngFor="let productoDulce of carritoDulce">
+                                            <div class="col-md-2 col-lg-2 col-xl-2">
+                                                <img [src]="productoDulce.imageUrl"
+                                                    class="img-fluid rounded-3" alt="Cotton T-shirt">
+                                            </div>
+                                            <div class="col-md-3 col-lg-3 col-xl-3">
+                                                <h6 class="text-muted">{{productoDulce.tipo}}</h6>
+                                                <h6 class="text-black">{{productoDulce.name}}</h6>
+                                            </div>
+                                            <div class="col-md-3 col-lg-3 col-xl-2 d-flex mb-3">
+                                                <button class="btn btn-link px-2"
+                                                (click)="removeOneDulce(productoDulce)">
+                                                    <i class="fas fa-minus"></i>
+                                                </button>
+
+                                                <input id="form2" min="1" name="quantityDulce" [value]="productoDulce.quantity" type="number"
+                                                    style="min-width: calc(1.5em + .5rem + 2px); "
+                                                    class="form-control form-control-sm" />
+
+                                                <button class="btn btn-link px-2"
+                                                    (click)="addOneDulce(productoDulce)">
+                                                    <i class="fas fa-plus"></i>
+                                                </button>
+                                            </div>
+                                            <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                                                <h6 class=""> {{(productoDulce.price)*(productoDulce.quantity!) | currency:'CLP'+''}}
+                                                    
+                                                </h6>
+                                            </div>
+                                            <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                                                <a (click)="removeDulce(productoDulce)" class="text-muted"><i class="fas fa-times" style="cursor:pointer;"></i></a>
+                                            </div>
+                                            <hr class="my-4">
+                                        </div>
+                                        <div class="pt-5">
+                                            <h6 class="mb-0"><a href="#!" class="text-body"><i
+                                                        class="fas fa-long-arrow-alt-left me-2"></i>Volver</a>
+                                            </h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 bg-grey">
+                                    <div class="p-5 shopping-flex">
+                                        <h3 class="fw-bold mb-5 mt-2 pt-1">Resumen de Compra</h3>
+                                        <hr class="my-4">
+                                        <div class="d-flex justify-content-between mb-4">
+                                            <h5 class="text-uppercase">{{this.shoppingCartService.getCantidad()}} Productos</h5>
+                                            <!-- <h5>{{carritoSalado.length}} PRODUCTOS SALADO(S)</h5>
+                                            <h5>{{carritoDulce.length}} PRODUCTO(S) SALADO(S)</h5> -->
+                                        </div>
+                                        <hr class="my-4">
+                                        <div class="d-flex justify-content-between mb-5">
+                                            <h5 class="text-uppercase">Precio total</h5>
+                                            <h5>{{this.shoppingCartService.totalPrice | currency: 'CLP'}} </h5>
+                                        </div>
+                                        <button (click)="agendarCarrito()" type="button" class="btn btn-dark btn-block btn-lg"
+                                            data-mdb-ripple-color="dark">Agendar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>

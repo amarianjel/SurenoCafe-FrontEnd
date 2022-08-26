@@ -1,0 +1,50 @@
+<div class="d-flex" mat-dialog-title style="justify-content: space-between">
+    <h2>Añadir {{data}}</h2>
+    <button mat-button style="font-size: 30px;" (click)="onNoClick()">&times;</button>
+</div>
+<form [formGroup]="formAdd" (ngSubmit)="crearProducto(p)" #p="ngForm"  mat-dialog-content class="mb-3 mt-3">
+    <div class="col-xl-12">					
+        <div class="form-group mb-2">
+            <label>Tipo</label>
+            <input formControlName="tipo" type="text" class="form-control" required>
+            <p class="text-danger aviso" *ngIf="tipoError()" >Minimo 4 carácteres</p>
+           
+        </div>
+        <div class="form-group mb-2">
+            <label>Nombre</label>
+            <input formControlName="name" type="text" class="form-control" required>
+            <p class="text-danger aviso" *ngIf="nameError()" >Minimo 4 carácteres</p>
+        </div>
+        <div class="form-group mb-2">
+            <label>Cantidad</label>
+            <input formControlName="cantidad" type="text" class="form-control" required>
+            <p class="text-danger aviso" *ngIf="cantidadError()" >Minimo 4 carácteres</p>
+        </div>
+        <div class="form-group mb-2">
+            <label>Precio</label>
+            <input formControlName="price" type="number" class="form-control" required>
+            <p class="text-danger aviso" *ngIf="priceError()" >Minimo 4 cifras - Máximo 6 cifras</p>
+        </div>
+        <div class="form-group mb-2">
+            <label>Descripción</label>
+            <textarea formControlName="description" class="form-control" required></textarea>
+            <p class="text-danger aviso" *ngIf="descriptionError()" >Minimo 10 carácteres</p>
+        </div>
+        <div class="form-group mb-2">
+            <label>Imagen</label>
+            <input formControlName="imageUrl" type="text" class="form-control" required>
+            <p class="text-danger aviso" *ngIf="imageUrlError()" >Minimo 5 carácteres</p>
+        </div>
+        <div class="form-group mb-2">
+            <label>Stock</label>
+            <input formControlName="stock" type="number" min="0" oninput="this.value = Math.abs(this.value)" class="form-control" required>
+            <p class="text-danger aviso" *ngIf="stockError()" >Campo requerido (Mínimo de stock: 0)</p>
+        </div>				
+    </div>
+    <div class="d-flex mt-3" mat-dialog-actions style="justify-content: space-between" >
+        <button class="btn btn-danger" type="button" (click)="onNoClick()">Cerrar</button>
+        <button class="btn btn-success" [disabled]="this.formAdd.invalid" >Crear</button>
+    </div>
+</form>
+
+

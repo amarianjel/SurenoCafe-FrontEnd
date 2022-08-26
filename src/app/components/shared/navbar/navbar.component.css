@@ -1,18 +1,32 @@
+a {
+    color: #be1523b6;
+}
+
+a:hover {
+    color: #be1522;
+}
+
 .nav-font {
     font-family: Karla;
     font-style: normal;
     font-weight: 700;
     color: #47525E !important;
 }
-.nav-font:hover{
+
+.nav-font:hover {
     font-family: Karla;
     font-style: normal;
     font-weight: 700;
     color: #121518 !important;
 }
+
 /* .nav-background{
     background-color: black;
 } */
+
+.icon-hover:hover {
+    color: #000000 !important;
+}
 
 .nav-padding {
     padding-top: 16px;
@@ -21,13 +35,69 @@
     padding-left: 16px;
     box-shadow: 0 3px 3px rgb(0 0 0 / 10%);
 }
-.sureno-logo{
+
+.sureno-logo {
     width: 200px;
     filter: blur(0);
     -webkit-filter: blur(0);
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
 }
-.nav-logo{
+
+.nav-logo {
     display: contents;
+}
+
+.fa-stack[data-count]:after {
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    content: attr(data-count);
+    font-size: 40%;
+    padding: .6em;
+    border-radius: 999px;
+    line-height: .75em;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    min-width: 2em;
+    font-weight: bold;
+    background: #be1523b6;
+    border-style: solid;
+}
+
+
+.fa-stack[data-count]:hover::after {
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    content: attr(data-count);
+    font-size: 40%;
+    padding: .6em;
+    border-radius: 999px;
+    line-height: .75em;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    min-width: 2em;
+    font-weight: bold;
+    background: #be1523;
+    border-style: solid;
+}
+
+::ng-deep.example-tooltip-red {
+    background: #be1523;
+    font-size: 15px;
+    font-family: Karla;
+}
+
+::ng-deep .mat-menu-panel {
+    background-color: #be1523;
+}
+
+::ng-deep button.mat-menu-item {
+    width: 100%;
+    color: white;
+}
+
+::ng-deep.mat-menu-item:hover:not([disabled]) {
+    background: rgb(255 255 255 / 10%) !important;
 }

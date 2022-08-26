@@ -1,0 +1,37 @@
+<div class="row mt-4 sw-background-1">
+    <div class="col-xl-12 align-bottom">
+        <h2 class="sweet-title-1" style="line-height: 0;"></h2>
+        <h2 class="sweet-title-2">Mi Cuenta</h2>
+    </div>
+</div>
+<div class="row mt-5 mb-5 gutters">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <h2 class="center-text"> <span class="badge rounded-pill" style="background-color: #be1522;" >¡Hola {{nombreUsuario}}! </span> </h2>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 mb-5">
+        <div class="card h-100">
+            <div class="card-body" style="background-color: black; border: solid 1px; border-radius: 5px;">
+                <div class="account-settings">
+                    <div class="user-profile ">
+                        <ul class="nav nav-pills flex-column mb-auto">
+                            <span class="fs-4 center-text">Opciones de Cuenta</span>
+                            <hr style="color: white; opacity: 1">
+                            <li class="mb-3">
+                                <a routerLink="editar" class="nav-link text-white center-text"> <i class="fa fa-user"></i><span
+                                        class="ms-2">Editar Perfil</span></a>
+                            </li>
+                            <li class="mb-3">
+                                <a routerLink="pedidos" class="nav-link text-white center-text"> <i
+                                        class="fa fa-magnifying-glass-location"></i><span class="ms-2">Ver mis
+                                        pedidos</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+        <router-outlet></router-outlet>
+    </div>
+</div>

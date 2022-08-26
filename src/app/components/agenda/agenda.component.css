@@ -1,0 +1,99 @@
+
+.picker{
+    color: rgba(164, 21, 34, 0.8);
+}
+
+.pd-background-1 {
+    /* min-height: 300px; */
+    background-color: #ecb9bd;
+}
+.sw-background-1 {
+    min-height: 300px;
+    background-color: #ecb9bd;
+}
+.align-bottom {
+    align-self: flex-end;
+}
+.sweet-title-1 {
+    font-family: Karla;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    color: rgb(164, 21, 33);
+    text-align: center;
+    margin-top: 30px;
+    
+}
+
+
+.imgcreado{
+    width: 30%;
+  }
+
+
+
+
+.titulos{
+    color: rgba(164, 21, 34, 0.8);
+}
+.sweet-title-2 {
+    margin-top: 30px;
+    font-family: Karla;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 80px;
+    color: rgba(164, 21, 34, 0.8);
+    text-align: center;
+    word-break: break-all;
+    line-height: 0;
+  
+}
+
+
+.sweet-title-3{
+    margin-top: 30px;
+    font-family: Karla;
+    font-style: normal;
+    font-weight: 500;
+    /* font-size: 60px; */
+    color: rgba(164, 21, 34, 0.8);
+    text-align: center;
+    word-break: break-all;
+    line-height: 0;
+  
+}
+
+
+.imgcreado{
+    width: 10%;
+  }
+
+.checkbox{
+    text-align: center;
+}
+
+.form-check{
+    float: none;
+}
+
+.form-check-input{
+    float: none;
+}
+.form-check-label{
+    margin-left: 5px;
+}
+ 
+.botonAgendar{
+    text-align: center;
+    
+}
+.mat-form-field{
+    display: contents !important;
+}
+.flex-agendado{
+    min-height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

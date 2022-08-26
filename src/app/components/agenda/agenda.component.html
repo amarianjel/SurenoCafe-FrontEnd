@@ -1,0 +1,177 @@
+<div *ngIf="this.loginService.loggedIn()">
+
+  <div *ngIf="!agendadoCorrectamente">
+    <div class="row mt-4 sw-background-1">
+      <div class="col-xl-12 align-bottom">
+        <h2 class="sweet-title-2" style="line-height: 0;">AGENDA</h2>
+        <p class="sweet-title-1">TU PEDIDO</p>
+        <br>
+      </div>
+    </div>
+    <div *ngIf="carritoSalado.length<=0 && carritoDulce.length<=0" class="row mt-4 mb-4" style="justify-content: center;" >
+      <div style="display: flex; flex-direction: column; align-items: center;">
+          <img src="/assets/carrito-vacio.png"
+          style="max-width: 60%;" alt="">
+          <h1 style="color:black">Tu Carrito está vacío :(</h1>
+          <h3 style="color:black">Prueba agregar algo antes de agendar!</h3>
+          <button class="btn btn-danger mt-2 mb-2" routerLink="/home">Ver Productos</button>
+      </div>
+  </div>
+
+    <div *ngIf="carritoSalado.length>0 || carritoDulce.length>0" class="container text-center">
+      <div class="row mt-4 mb-5 justify-content-start">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body" style="background: #ecb9bd; outline: solid 1px black; border-radius: 5px;">
+              <h3 class="titulos">Selecciona la fecha de agendado: </h3>
+
+              <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" readonly
+                [(ngModel)]="fechaElegida">
+              <mat-datepicker-toggle matSuffix [for]="picker" class="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+
+            </div>
+          </div>
+          <br>
+        </div>
+
+        <div class="col-md-4 checkbox ">
+          <div class="card">
+
+
+            <div *ngIf="fechaElegida" class="card-body" style="background: #ecb9bd; outline: solid 1px black; border-radius: 5px;">
+
+              <h3 class="titulos">Selecciona la sucursal: </h3>
+
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="local" value="1" id="flexRadioDefault3"
+                  [(ngModel)]="local">
+                <label class="form-check-label" for="flexRadioDefault3">
+                  5 de abril 325
+                </label>
+              </div>
+
+              <div *ngIf="isWeekend()" class="form-check">
+                <input class="form-check-input" type="radio" name="local" id="flexRadioDefault1" disabled>
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Flores Millán 246
+                </label>
+              </div>
+
+              <div *ngIf="!isWeekend()" class="form-check">
+                <input class="form-check-input" type="radio" name="local" value="2" id="flexRadioDefault2"
+                  [(ngModel)]="local">
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Flores Millán 246
+                </label>
+              </div>
+
+              <div *ngIf="isWeekend()" class="form-check">
+                <input class="form-check-input" type="radio" name="local" id="flexRadioDefault4" disabled>
+                <label class="form-check-label" for="flexRadioDefault4">
+                  Constitución 724
+                </label>
+              </div>
+              <div *ngIf="!isWeekend()" class="form-check">
+                <input class="form-check-input" type="radio" name="local" value="3" id="flexRadioDefault5"
+                  [(ngModel)]="local">
+                <label class="form-check-label" for="flexRadioDefault5">
+                  Constitución 724
+                </label>
+              </div>
+
+            </div>
+
+
+
+
+
+            <div *ngIf="!fechaElegida" class="card-body" style="background: #ecb9bd; outline: solid 1px black; border-radius: 5px;">
+
+              <h3 class="titulos">Selecciona la sucursal: </h3>
+
+              <div class="form-check">
+                <input disabled class="form-check-input" type="radio" name="local" value="1" id="flexRadioDefault3"
+                  [(ngModel)]="local">
+                <label class="form-check-label" for="flexRadioDefault3">
+                  5 de abril 325
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="local" id="flexRadioDefault1" disabled>
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Flores Millán 246
+                </label>
+              </div>
+
+
+
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="local" id="flexRadioDefault4" disabled>
+                <label class="form-check-label" for="flexRadioDefault4">
+                  Constitución 724
+                </label>
+              </div>
+
+
+            </div>
+
+
+
+          </div>
+          <br>
+        </div>
+
+
+
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body" style="background: #ecb9bd; outline: solid 1px black; border-radius: 5px;">
+              <h3 class="titulos">¿A qué hora te recibiremos? </h3>
+
+              <mat-form-field appearance="fill" color="red">
+                <mat-label>Selecciona un horario</mat-label>
+                <mat-select [(value)]="selected">
+                  <mat-option *ngFor="let hour of filterHours()" value="{{hour}}">{{hour}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+
+
+            </div>
+
+
+
+          </div>
+          <br>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div *ngIf="carritoSalado.length>0 || carritoDulce.length>0" class="botonAgendar mb-5">
+
+
+      <button *ngIf="isValid()" (click)="botonAgendar()" class="btn btn-outline-danger">Agendar</button>
+
+
+      <button disabled *ngIf="!isValid()" class="btn btn-outline-danger">Agendar</button>
+      <br><br>
+    </div>
+
+  </div>
+
+  <div *ngIf="agendadoCorrectamente" class="mt-5 mb-5 flex-agendado" style="text-align:center;">
+    <br>
+    <img class="imgcreado" src="../../assets/tick.png" alt="">
+
+    <h1 class="sweet-title-3" style="line-height: 0; margin-bottom: 2%;">¡Tu pedido ha sido agendado!</h1>
+    <br>
+
+    <button routerLink="/home" class="btn btn-outline-danger">Volver a Inicio</button>
+    <br>
+  </div>
+
+</div>

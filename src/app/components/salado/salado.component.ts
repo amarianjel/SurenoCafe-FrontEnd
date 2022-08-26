@@ -47,4 +47,9 @@ export class SaladoComponent implements OnInit {
     return this.salados.filter((salado) => salado.tipo == tipo);
   }
 
+
+
+ 
+
+
 }

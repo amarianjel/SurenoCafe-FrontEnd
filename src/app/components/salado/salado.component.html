@@ -7,10 +7,10 @@
 
 <div class="row mt-2 mb-3">
     <div class="col-xl-12 centered-element mt-5 mb-5">
-        <h2 class="sweet-title-3">Salados</h2>
+        <h2 class="sweet-title-3">¡Selecciona tu salado!</h2>
     </div>
-    <div *ngFor="let tipo of tipos; index as i" class="col-xl-4 centered-element">
-        <a routerLink={{rutas[i]}} class="centered-element">
+    <div *ngFor="let tipo of tipos; index as i" class="col-xl-4 centered-element mb-5">
+        <a [routerLink]="['/salado', tipo]"  class="centered-element">
             <img [src]="cargarPortada(tipo)[0].imageUrl || defaultimg" alt="" class="product-img mb-2">
             <h2 class="product-title">{{tipo}}</h2>
         </a>

@@ -7,5 +7,5 @@ export interface ISalado {
     price: number;
     description: string;
     imageUrl: string;
-    
+    stock: number;
 }
