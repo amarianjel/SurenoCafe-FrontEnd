@@ -1,0 +1,33 @@
+.nav-font {
+    font-family: Karla;
+    font-style: normal;
+    font-weight: 700;
+    color: #47525E !important;
+}
+.nav-font:hover{
+    font-family: Karla;
+    font-style: normal;
+    font-weight: 700;
+    color: #121518 !important;
+}
+/* .nav-background{
+    background-color: black;
+} */
+
+.nav-padding {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-right: 32px;
+    padding-left: 16px;
+    box-shadow: 0 3px 3px rgb(0 0 0 / 10%);
+}
+.sureno-logo{
+    width: 200px;
+    filter: blur(0);
+    -webkit-filter: blur(0);
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+.nav-logo{
+    display: contents;
+}

@@ -1,0 +1,47 @@
+.location-title{
+    font-family: Karla;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.location-bg{
+    background-color: rgba(190, 21, 34, 0.6);
+}
+.location-1{
+    font-family: Karla;
+    font-size: 30px;
+    color: #FFFFFF;
+    text-align: center;
+    margin: auto;
+}
+
+@media (max-width: 1199px) {
+    .row-reverse{
+    flex-direction: column-reverse;
+    }
+    .centered{
+        text-align: center !important;
+    }
+    .container {
+        position: relative;
+        width: 500px;
+        overflow: hidden;
+        padding-top: 500px; /* 1:1 Aspect Ratio */
+    }
+    .responsive-iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    .margin-bt{
+        margin-bottom: 20px;
+    }
+}

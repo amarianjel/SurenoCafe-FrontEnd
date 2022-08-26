@@ -1,0 +1,17 @@
+.footer-font {
+    color: #47525E;
+    font-family: Karla;
+    font-size: 20px;
+    line-height: 10px;
+    text-align: center;
+}
+.line {
+    border: 1px solid #000000;
+    opacity: 0.38;
+}
+.socials{
+    color: rgb(83 83 83);
+}
+.margin{
+    margin-right: 10px;
+}

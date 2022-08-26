@@ -1,0 +1,95 @@
+<div class="row mt-4 background-1">
+    <div class="col-xl-6 centered-element">
+        <img class="no-blur mt-3" src="/assets/home-1.png" alt="">
+    </div>
+    <div class="col-xl-6 centered-element">
+        <h2 class="title-font-1">¡Conoce nuestras tortas y encantos!</h2>
+        <p class="text-font-1">Un mundo de sabores esperando por ti</p>
+        <div class="text-center">
+            <a name="" id="" routerLink="/dulce" class="btn btn-primary btn-style-1" href="#" role="button">¡Entérate!</a>
+        </div>
+    </div>
+</div>
+<div class="row mt-4 background-2">
+    <div class="col-xl-6 centered-element">
+        <h2 class="title-font-2">¡Exquisitas preparaciones!</h2>
+        <p class="text-font-2">Revisa nuestra carta de productos salados</p>
+        <div class="text-center">
+            <a name="" id="" routerLink="/salado" class="btn btn-primary btn-style-2" href="#" role="button">Aquí</a>
+        </div>
+    </div>
+    <div class="col-xl-6 centered-element">
+        <img class="no-blur mt-3" src="/assets/home-2.png" alt="">
+    </div>
+</div>
+
+<div class="row mt-4 background-3">
+    <div class="col-xl-3" style="display: flex; margin: auto; justify-content: center">
+        <h2 class="title-font-3 mt-3">Productos destacados</h2>
+    </div>
+    <div class="col-xl-9" style="margin: auto;">
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-indicators buttons-round" style="margin-bottom: -40px;">
+              <button class="" type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner" style="margin-bottom: 50px; margin-top: 50px;">
+              <div class="carousel-item active" data-bs-interval="10000">
+
+                <div class="col-12 flexed">
+                    <div class="card custom-margin bg-color" style="width: 18rem; " *ngFor="let _ of [].constructor(3); let i = index" >
+                        <div class="card-body">
+                            <a class="centered-sweet pointer" routerLink="/dulce" >
+                                <img [src]="this.dulceComponent.pasteleria[i].imageUrl" alt="" class="img-fluid">
+                                <h2 class="product-title custom-h2">{{this.dulceComponent.pasteleria[i].name | uppercase}}</h2>
+                            </a>
+                        </div>
+                      </div>
+                </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <div class="col-12 flexed">
+                    <div class="card custom-margin bg-color" style="width: 18rem;" *ngFor="let _ of [].constructor(3); let i = index" >
+                        <div class="card-body">
+                            <a class="centered-sweet pointer" routerLink="/dulce" >
+                                <img [src]="this.dulceComponent.postres[i].imageUrl" alt="" class="img-fluid">
+                                <h2 class="product-title custom-h2">{{this.dulceComponent.postres[i].name | uppercase}}</h2>
+                            </a>
+                        </div>
+                      </div>
+                </div>
+
+                <!-- <div class="carousel-caption d-none d-md-block">
+                  <h5>Second slide label</h5>
+                  <p>Some representative placeholder content for the second slide.</p>
+                </div> -->
+              </div>
+              <div class="carousel-item">
+
+                <div class="col-12 flexed">
+                    <div class="card custom-margin bg-color" style="width: 18rem;" *ngFor="let _ of [].constructor(3); let i = index" >
+                        <div class="card-body">
+                            <a class="centered-sweet pointer" routerLink="/dulce" >
+                                <img [src]="this.dulceComponent.pasteleria[i].imageUrl" alt="" class="img-fluid">
+                                <h2 class="product-title custom-h2">{{this.dulceComponent.pasteleria[i].name | uppercase}}</h2>
+                            </a>
+                        </div>
+                      </div>
+                </div>
+
+              </div>
+            </div>
+            <button class="carousel-control-prev arrow-size" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next arrow-size" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </div>
+</div>
+
+  

@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-light nav-background nav-padding">
+
+    <!--  Esto solo se muestra en la version movil  -->
+    <a *ngIf="isMobileLayout" href="#" [routerLink]="['home']" class="navbar-brand nav-logo">
+        <img src="/assets/sureno-logo-rojo.png" class="sureno-logo" alt="Sureño Café">
+    </a>
+
+    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!--  Navbar de escritorio  -->
+    <div class="collapse navbar-collapse justify-content-between mt-2 max-width" id="navbarCollapse">
+        <!-- Izquierda -->
+        <a *ngIf="!isMobileLayout" href="#" [routerLink]="['home']" class="navbar-brand nav-logo">
+            <img src="/assets/sureno-logo-rojo.png" class="sureno-logo" alt="Sureño Café">
+        </a>
+        <!-- Centro -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="#" [routerLink]="['home']" class="nav-item nav-link active nav-font">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" [routerLink]="['dulce']" class="nav-item nav-link active nav-font">Dulce</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" [routerLink]="['salado']" class="nav-item nav-link active nav-font">Salado</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" [routerLink]="['pedidos']" class="nav-item nav-link active nav-font">Haz tu pedido</a>
+            </li>
+        </ul>
+        <!-- Derecha -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="#" [routerLink]="['localizacion']" class="nav-item nav-link active nav-font">
+                    <i class="fa fa-light fa-location-dot fa-2xl" style="color: black; margin-right: 5px;"></i>Localizar
+                    tienda
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>

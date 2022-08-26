@@ -1,0 +1,48 @@
+<div [ngStyle]="{ display: modalService.oculto }" class="modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <!-- CABECERA -->
+        <div class="modal-header display">
+          <div class="row">
+            <div class="col-12" style="display: flex;">
+              <img class="logo" src="/assets/logo-flor.png" alt="logo" />
+              <h5 class="modal-title">{{ salado?.name }}</h5>
+              <button (click)="ocultarModal()" type="button" class="btn-close btn-danger"
+                style="width: 30px; height: 30px; margin-left: 0px;"></button>
+            </div>
+          </div>
+        </div>
+        <!-- CUERPO -->
+        <div class="modal-body">
+          <div class="row">
+            <div style="margin: auto;" class="col-12 flex-center">
+              <img class="imagenbody" [src]="salado?.imageUrl " />
+              <span class="text-align">{{ salado?.description }}</span>
+            </div>
+            <div class="col-12 flecha">
+              <!---- Muestra el boton dependiendo de la condición-->
+              <button [disabled]="!(index > 0)" class="btn arrow-style" (click)="cambiarIzquierda()">
+                &#10096;
+              </button>
+              <!---- Muestra el boton dependiendo de la condición-->
+              <button [disabled]="!(index < salados.length - 1)" class="btn arrow-style" (click)="cambiarDerecha()">
+                &#10097;
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- PIE -->
+        <div class="modal-footer">
+          <div class="col-6 flex-end">
+            <h4 class="cantidad">{{ salado?.cantidad }}</h4>
+            <h4 class="precio">{{ salado?.price | currency:'CLP' }}</h4>
+          </div>
+          <div class="col-6 flex-end">
+            <button (click)="toPedidos()" type="button" class="btn btn-success">
+              Haz tu pedido
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

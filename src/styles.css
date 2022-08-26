@@ -1,0 +1,91 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: Karla;
+    src: url(assets/fonts/Karla/Karla-Regular.ttf) format('truetype');
+}
+ 
+.Karla{
+    font-family: Karla;
+}
+
+.background-1{
+    min-height: 540px;
+    background-color: #ecb9bd;
+}
+.background-2{
+    min-height: 540px;
+    background-color: rgb(208 186 170);
+}
+
+.title-font-1{
+    font-family: Karla;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 72px;
+    color: rgba(164, 21, 34, 0.8);
+    text-align: center;
+    word-wrap: break-word;
+}
+.text-font-1{
+    font-family: Karla;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    color: rgba(164, 21, 34, 0.8);
+    text-align: center;
+}
+.title-font-2{
+    font-family: Karla;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 72px;
+    color: rgb(164, 21, 33);
+    text-align: center;
+    margin-top: 30px;
+    word-wrap: break-word;
+}
+.text-font-2{
+    font-family: Karla;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    color: rgb(164, 21, 33);
+    text-align: center;
+}
+.btn-style-1{
+    
+    font-family: Karla;
+    color: #b23641;
+    background-color: rgb(236 185 189);
+    border-color: rgb(0 0 0 / 80%);
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+.btn-style-2{
+    font-family: Karla;
+    color: #b23641;
+    background-color: rgb(208 186 170);
+    border-color: rgb(0 0 0 / 80%);
+    font-weight: 700;
+}
+.centered-element{
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    text-decoration: none !important;
+}
+.no-blur{
+    filter: blur(0);
+    -webkit-filter: blur(0);
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+.max-width{
+    max-width: 1300px;
+    margin: auto;
+}
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+    color: rgb(255, 255, 255) !important;
+    background-color: #b23641 !important;
+    border-color: rgb(0 0 0 / 80%) !important;
+}

@@ -1,0 +1,55 @@
+<div class="row mt-4 sw-background-1">
+    <div class="col-xl-12 align-bottom">
+        <h2 class="sweet-title-1" style="line-height: 0;">SABORES</h2>
+        <h2 class="sweet-title-2">DULCES</h2>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row mt-2 mb-3 justify-ct">
+        <!--Pasteleria-->
+        <div class="col-xl-12 centered-sweet mt-5 mb-3">
+            <h2 class="sweet-title-3">Pastelería</h2>
+        </div>
+
+        <div *ngFor="let pastel of pasteleria; index as i" class="col-xl-4 centered-sweet mt-5 ">
+            <div  class="col-xl-4 centered-sweet mt-5 cursor-pointer">
+                <!---- Modal existente pasa el arreglo designado y la posicion en la que se selecciona-->
+                <a class="centered-sweet pointer" (click)="abrirModal(pasteleria,i)">
+                    <img [src]="pastel.imageUrl | imageDefault: defaultImg" alt="" class="product-img mb-2 img-fluid">
+                    <h2 class="product-title custom-h2">{{pastel.name | uppercase}}</h2>
+                </a>
+            </div>
+        </div>
+        <!--Postres-->
+        <div class="col-xl-12 centered-sweet mt-5 mb-3">
+            <h2 class="sweet-title-3">Postres</h2>
+        </div>
+        <div *ngFor="let postre of postres; index as i" class="col-xl-4 centered-sweet mt-5">
+            <div class="col-xl-4 centered-sweet mt-5 cursor-pointer">
+                <!---- Modal existente pasa el arreglo designado y la posicion en la que se selecciona-->
+                <a  class="centered-sweet pointer" (click)="abrirModal(postres,i)">
+                    <img [src]="postre.imageUrl | imageDefault: defaultImg" alt="" class="product-img mb-2 img-fluid">
+                    <h2 class="product-title custom-h2" >{{postre.name | uppercase}} </h2>
+                </a>
+            </div>
+        </div>
+        <!--Totas-->
+        <div class="col-xl-12 centered-sweet mt-5 mb-3">
+            <h2 class="sweet-title-3">Tortas</h2>
+        </div>
+
+                <!---- Modal existente pasa el arreglo designado y la posicion en la que se selecciona-->
+        <div *ngFor="let torta of tortas; index as i" class="col-xl-4 centered-sweet mt-5 cursor-pointer">
+            <div class="col-xl-4 centered-sweet mt-5 cursor-pointer">
+                <a class="centered-sweet pointer" (click)="abrirModal(tortas,i)">
+                    <img [src]="torta.imageUrl | imageDefault: defaultImg" alt="" class="product-img mb-2 img-fluid">
+                    <h2 class="product-title custom-h2">{{torta.name | uppercase}}</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<app-modal-dulce></app-modal-dulce>
