@@ -41,8 +41,8 @@
                     <div class="card custom-margin bg-color" style="width: 18rem; " *ngFor="let _ of [].constructor(3); let i = index" >
                         <div class="card-body">
                             <a class="centered-sweet pointer" routerLink="/dulce" >
-                                <img [src]="this.dulceComponent.pasteleria[i].imageUrl" alt="" class="img-fluid">
-                                <h2 class="product-title custom-h2">{{this.dulceComponent.pasteleria[i].name | uppercase}}</h2>
+                                <img [src]="this.pasteleriaComponent.pasteleria[i].imageUrl" alt="" class="img-fluid">
+                                <h2 class="product-title custom-h2">{{this.pasteleriaComponent.pasteleria[i].name | uppercase}}</h2>
                             </a>
                         </div>
                       </div>
@@ -53,8 +53,8 @@
                     <div class="card custom-margin bg-color" style="width: 18rem;" *ngFor="let _ of [].constructor(3); let i = index" >
                         <div class="card-body">
                             <a class="centered-sweet pointer" routerLink="/dulce" >
-                                <img [src]="this.dulceComponent.postres[i].imageUrl" alt="" class="img-fluid">
-                                <h2 class="product-title custom-h2">{{this.dulceComponent.postres[i].name | uppercase}}</h2>
+                                <img [src]="this.postreComponent.postre[i].imageUrl" alt="" class="img-fluid">
+                                <h2 class="product-title custom-h2">{{this.postreComponent.postre[i].name | uppercase}}</h2>
                             </a>
                         </div>
                       </div>
@@ -71,8 +71,8 @@
                     <div class="card custom-margin bg-color" style="width: 18rem;" *ngFor="let _ of [].constructor(3); let i = index" >
                         <div class="card-body">
                             <a class="centered-sweet pointer" routerLink="/dulce" >
-                                <img [src]="this.dulceComponent.pasteleria[i].imageUrl" alt="" class="img-fluid">
-                                <h2 class="product-title custom-h2">{{this.dulceComponent.pasteleria[i].name | uppercase}}</h2>
+                                <img [src]="this.tortaComponent.torta[i].imageUrl" alt="" class="img-fluid">
+                                <h2 class="product-title custom-h2">{{this.tortaComponent.torta[i].name | uppercase}}</h2>
                             </a>
                         </div>
                       </div>
@@ -91,5 +91,3 @@
           </div>
     </div>
 </div>
-
-  

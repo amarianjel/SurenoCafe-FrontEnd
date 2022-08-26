@@ -14,13 +14,11 @@ export class AppComponent {
     window.scroll(0,0);
   }
 
+
   dulces: IDulce[] = [];
    //Injección de dependencias
    constructor(public productService: ProductService){}
 
    ngOnInit(): void{
-    // this.productService.getProducts().subscribe( (res: any[])=>{
-    //   this.dulces = res;
-    // })
   }
 }

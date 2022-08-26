@@ -17,6 +17,9 @@ import { PollosRellenosComponent } from './salado/pollos-rellenos/pollos-relleno
 import { QuinchesComponent } from './salado/quinches/quinches.component';
 import { HomeComponent } from './home/home.component';
 import { PagenofoundComponent } from './pagenofound/pagenofound.component';
+import { PasteleriaComponent } from './dulce/pasteleria/pasteleria.component';
+import { PostreComponent } from './dulce/postre/postre.component';
+import { TortaComponent } from './dulce/torta/torta.component';
 
 
 
@@ -34,6 +37,9 @@ import { PagenofoundComponent } from './pagenofound/pagenofound.component';
     PedidosComponent,
     LocalizacionComponent,
     PagenofoundComponent,
+    PasteleriaComponent,
+    PostreComponent,
+    TortaComponent,
   ],
   exports: [
     HomeComponent,
@@ -47,6 +53,10 @@ import { PagenofoundComponent } from './pagenofound/pagenofound.component';
     QuinchesComponent,  
     PedidosComponent,
     LocalizacionComponent,
+    PagenofoundComponent,
+    PasteleriaComponent,
+    PostreComponent,
+    TortaComponent,
   ],
   imports: [
     CommonModule,

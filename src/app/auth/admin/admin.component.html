@@ -1,0 +1,43 @@
+<p>admin works!</p>
+
+<div class="row mt-2 mb-3">
+    <div class="col-xl-12 centered-element mt-5 mb-5">
+        <h2 class="sweet-title-3">Auth</h2>
+    </div>
+    <div *ngFor="let auth of auths; index as i" class="col-xl-4 centered-element">
+        <a class="centered-element">
+            <img [src]="auth.userImg || defaultImg" alt="" class="product-img mb-2">
+            <h2 class="product-title">{{auth.userName | uppercase}}</h2>
+        </a>
+    </div>
+</div>
+
+<hr>
+
+<div class="row mt-2 mb-3">
+    <div class="col-xl-12 centered-element mt-5 mb-5">
+        <h2 class="sweet-title-3">Salados</h2>
+    </div>
+    <div *ngFor="let salado of salados; index as i" class="col-xl-4 centered-element">
+        <a class="centered-element">
+            <img [src]="salado.imageUrl|| defaultImg" alt="" class="product-img mb-2">
+            <h2 class="product-title">{{salado.name | uppercase}}</h2>
+        </a>
+    </div>    
+</div>
+
+<hr>
+<div class="row mt-2 mb-3">
+    <div class="col-xl-12 centered-element mt-5 mb-5">
+        <h2 class="sweet-title-3">Dulces</h2>
+    </div>
+    <div *ngFor="let dulce of dulces; index as i" class="col-xl-4 centered-element">
+        <a class="centered-element">
+            <img [src]="dulce.imageUrl|| defaultImg" alt="" class="product-img mb-2">
+            <h2 class="product-title">{{dulce.name | uppercase}}</h2>
+        </a>
+    </div>    
+</div>
+
+
+<!-- routerLink={{rutas[i]}}  -->

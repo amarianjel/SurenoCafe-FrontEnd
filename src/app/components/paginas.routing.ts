@@ -3,6 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 //* Componentes
 import { DulceComponent } from './dulce/dulce.component';
+import { PasteleriaComponent } from './dulce/pasteleria/pasteleria.component';
+import { PostreComponent } from './dulce/postre/postre.component';
+import { TortaComponent } from './dulce/torta/torta.component';
 import { LocalizacionComponent } from './localizacion/localizacion.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { AcompanhamientosComponent } from './salado/acompanhamientos/acompanhamientos.component';
@@ -18,6 +21,11 @@ import { SaladoComponent } from './salado/salado.component';
 const routes: Routes = [
 
     { path: 'dulce', component: DulceComponent },
+
+    { path: 'pasteleria', component: PasteleriaComponent },
+    { path: 'postre', component: PostreComponent },
+    { path: 'torta', component: TortaComponent },
+
 
     { path: 'salado', component: SaladoComponent }, //! aQUI FALTA CONVERTIR EN HIJA
 

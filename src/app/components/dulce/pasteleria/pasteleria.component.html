@@ -1,0 +1,38 @@
+<div class="row mt-4 sw-background-1">
+    <div class="col-xl-12 align-bottom">
+        <h2 class="sweet-title-1" style="line-height: 0;">SABORES</h2>
+        <h2 class="sweet-title-2">Pasteleria</h2>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row mt-2 mb-3 justify-ct">
+
+        <div class="row pd-background-2">
+            <div class="col-xl-12 mt-4 mb-4 dp-flex-around">
+                <a routerLink={{this.dulceComponent.rutas[0]}} class="centered-element">
+                    <h2 class="ord-title-1">Pasteleria</h2>
+                </a>
+                <a routerLink={{this.dulceComponent.rutas[1]}} class="centered-element">
+                    <h2 class="ord-title-1">Postres</h2>
+                </a>
+                <a routerLink={{this.dulceComponent.rutas[2]}} class="centered-element">
+                    <h2 class="ord-title-1">Tortas</h2>
+                </a>
+            </div>
+        </div>
+
+        <div *ngFor="let a of pasteleria; index as i" class="col-xl-4 centered-sweet mt-5 ">
+            <div  class="col-xl-4 centered-sweet mt-5 cursor-pointer">
+                <!---- Modal existente pasa el arreglo designado y la posicion en la que se selecciona-->
+                <a class="centered-sweet pointer" (click)="abrirModal(pasteleria,i)">
+                    <img [src]="a.imageUrl | imageDefault: defaultImg" alt="" class="product-img mb-2 img-fluid">
+                    <h2 class="product-title custom-h2">{{a.name | uppercase}}</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<app-modal-dulce></app-modal-dulce>

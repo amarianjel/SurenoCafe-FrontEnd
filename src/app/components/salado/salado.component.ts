@@ -19,11 +19,10 @@ export class SaladoComponent implements OnInit {
 
   rutas: string[] = ['/carne', '/acompanhamiento', '/guiso','/lasanha','/pollo_relleno','/quinche'];
   
-  constructor( public productService: ProductService, public modalService: ModalService, private readonly router: Router ) { }
+  constructor( public productService: ProductService, private readonly router: Router ) { }
 
   ngOnInit(): void {
     this.showProducts();
-    
     console.log(this.tipos);
   }
 
@@ -31,7 +30,6 @@ export class SaladoComponent implements OnInit {
     this.productService.getSalados().subscribe( (res: any[]) => {
       this.salados = res;
       console.log(this.salados);
-      console.log("HOLAAA");
       this.cargarTipos(res);
     });
   }
@@ -48,7 +46,5 @@ export class SaladoComponent implements OnInit {
   cargarPortada(tipo: string) {
     return this.salados.filter((salado) => salado.tipo == tipo);
   }
-
- 
 
 }
